@@ -16,7 +16,7 @@ public class HelloFixture
     {
         var greet = Hello.greet();
 
-        Assert.AreEqual(greet, "Hello!", "The greeting is incorrect");
+        Assert.AreEqual(greet, "Hello", "The greeting is incorrect");
     }
 
 
