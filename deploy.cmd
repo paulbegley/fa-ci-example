@@ -59,6 +59,17 @@ FOR /F %%d in ('DIR "Project.json" /S /B') DO (
   call nuget restore %%d -PackagesDirectory %home%\data\Functions\packages\nuget
 )
 
+
+echo "Running Tests"
+
+
+call .\Scriptcs\scriptcs .\HelloTestDriver.csx -debug
+
+
+IF %ERRORLEVEL% NEQ 0 goto error
+
+
+
 echo Handling Basic Web Site deployment.
 
 :: KuduSync
